@@ -1,26 +1,26 @@
   <?php
     session_start();
-    $title = "Dashboard Admin - Sipres";
+    $title = "Dashboard User - Sipres";
     require 'layouts/header.php';
     require 'layouts/navbar.php';
     require 'functions.php';
     if (!isset($_SESSION["username"])) {
         echo '<script>
                     alert("Mohon login dahulu !");
-                    window.location="' . $base_url . '/login.php";
+                    window.location="' . $base_url . '/";
                 </script>';
         return false;
     }
 
-    if ($_SESSION["role_id"] != "1") {
-        echo '<script> 
+    if ($_SESSION["role_id"] != "2") {
+        echo '<script>
                     alert("Maaf Anda Tidak Berhak Ke Halaman ini !");
                     window.location="' . $base_url . '/login.php";
                     </script>';
         return false;
     }
     $user = $_SESSION["username"];
-      $role_id = $_SESSION["role_id"];
+    $role_id = $_SESSION["role_id"];
     $query = mysqli_query($conn, "SELECT * FROM user 
                                  JOIN role
                                  ON user.role_id = role.id WHERE username = '$user' AND role_id = '$role_id'");
@@ -137,8 +137,8 @@
                   </div>
                   <!-- ./col -->
               </div>
-              <!-- 
-              <div class="row">
+
+              <!-- <div class="row">
                   <div class="col">
                       <div class="callout callout-danger">
                           <h3>

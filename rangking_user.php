@@ -12,7 +12,7 @@ if (!isset($_SESSION["username"])) {
     return false;
 }
 
-if ($_SESSION["role_id"] != "1") {
+if ($_SESSION["role_id"] != "2") {
     echo '<script>
                     alert("Maaf Anda Tidak Berhak Ke Halaman ini !");
                     window.location="' . $base_url . '/login.php";
@@ -65,7 +65,7 @@ $stmtx2y = $ranObj->readBob();
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <form action="hasil/cetak_hasil.php" method="post" enctype="multipart/form-data">
+                            <form action="hasil_user/cetak_hasil.php" method="post" enctype="multipart/form-data">
                                 <button class="btn btn-primary m-2" type="submit" style="float: right;">Cetak</button>
                             </form>
                             <div class="row mb-3">

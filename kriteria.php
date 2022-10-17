@@ -15,7 +15,7 @@ if (!isset($_SESSION["username"])) {
 if ($_SESSION["role_id"] != "1") {
     echo '<script>
                     alert("Maaf Anda Tidak Berhak Ke Halaman ini !");
-                    window.location="' . $base_url . '/' . $_SESSION["role"] . '/";
+                    window.location="' . $base_url . '/login.php";
                     </script>';
     return false;
 }
@@ -87,10 +87,10 @@ $kriObj = new Kriteria($db);
                                                     id="nama_kriteria" name="nama_kriteria" placeholder="Nama Kriteria">
                                             </div>
                                             <div class="form-group">
-                                                <label for="bobot_kriteria">Bobot Kriteria</label>
+                                                <label for="bobot_kriteria">Penilaian Kriteria</label>
                                                 <input type="text" autocomplete="off" class="form-control"
                                                     id="bobot_kriteria" name="bobot_kriteria"
-                                                    placeholder="Bobot Kriteria">
+                                                    placeholder="Penilaian Kriteria">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -108,7 +108,7 @@ $kriObj = new Kriteria($db);
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Kriteria</th>
-                                        <th>Bobot</th>
+                                        <th>Penilaian Kriteria</th>
                                         <th>Aksi</th>
 
                                     </tr>
@@ -156,11 +156,11 @@ $kriObj = new Kriteria($db);
                                                             placeholder="Nama Kriteria">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="bobot_kriteria">Bobot Kriteria</label>
+                                                        <label for="bobot_kriteria">Penilaian Kriteria Kriteria</label>
                                                         <input type="text" autocomplete="off" class="form-control"
                                                             id="bobot_kriteria" name="bobot_kriteria"
                                                             value="<?= $row["bobot_kriteria"]; ?>"
-                                                            placeholder="Bobot Kriteria">
+                                                            placeholder="Penilaian Kriteria Kriteria">
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">

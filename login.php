@@ -49,6 +49,11 @@ if (isset($_POST["login"])) {
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["role_id"] = $row["role_id"];
                 header("Location: admin.php");
+            } else {
+                $_SESSION["id"] = $row["id"];
+                $_SESSION["username"] = $row["username"];
+                $_SESSION["role_id"] = $row["role_id"];
+                header("Location: user.php");
             }
         } else {
             $_SESSION['error'] = "<strong>Password Salah!</strong>";

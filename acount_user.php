@@ -12,7 +12,7 @@ if (!isset($_SESSION["username"])) {
     return false;
 }
 
-if ($_SESSION["role_id"] != "1") {
+if ($_SESSION["role_id"] != "2") {
     echo '<script>
                     alert("Maaf Anda Tidak Berhak Ke Halaman ini !");
                     window.location="' . $base_url . '/login.php";
@@ -60,7 +60,7 @@ require 'layouts/sidebar.php';
                         </div>
                         <?php unset($_SESSION['error']); ?>
                         <?php } ?>
-                        <form action="acount/edit.php" method="POST">
+                        <form action="acount_user/edit.php" method="POST">
                             <input type="hidden" name="id_password" id="id_pasword" value="<?= $admin['id']; ?>">
                             <div class="form-group">
                                 <label for="password1">Password</label>

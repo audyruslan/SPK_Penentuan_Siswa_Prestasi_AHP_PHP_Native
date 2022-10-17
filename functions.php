@@ -2,7 +2,7 @@
 // koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "ahp2");
 // link
-$base_url = "http://localhost/sipres";
+$base_url = "http://localhost/sipres2";
 function query($query)
 {
     global $conn;
@@ -53,6 +53,17 @@ if (isset($_SESSION["username"])) {
         //hitung semua user
         $count = mysqli_query($conn, "SELECT * FROM user WHERE role_id='2'");
         $totalUser = mysqli_num_rows($count); //total user
+    } else {
+        //hitung semua pengguna
+        $count = mysqli_query($conn, "SELECT * FROM user ORDER BY id DESC");
+        $totalPengguna = mysqli_num_rows($count); //total pengguna
+        //hitung semua admin
+        $count = mysqli_query($conn, "SELECT * FROM user WHERE role_id='1'");
+        $totalAdmin = mysqli_num_rows($count); //total admin
+        //hitung semua user
+        $count = mysqli_query($conn, "SELECT * FROM user WHERE role_id='2'");
+        $totalUser = mysqli_num_rows($count); //total user
+
     }
 }
 

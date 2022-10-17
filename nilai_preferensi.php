@@ -15,7 +15,7 @@ if (!isset($_SESSION["username"])) {
 if ($_SESSION["role_id"] != "1") {
     echo '<script>
                     alert("Maaf Anda Tidak Berhak Ke Halaman ini !");
-                    window.location="' . $base_url . '/' . $_SESSION["role"] . '/";
+                       window.location="' . $base_url . '/login.php";
                     </script>';
     return false;
 }

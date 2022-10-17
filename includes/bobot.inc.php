@@ -191,6 +191,17 @@ class Bobot {
 		}
 	}
 
+	function delete_hasilakhir() {
+		$query = "DELETE FROM hasil_kriteria";
+		$stmt = $this->conn->prepare($query);
+
+		if ($result = $stmt->execute()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	function delete() {
 		$query = "DELETE FROM {$this->table_name}";
 		$stmt = $this->conn->prepare($query);

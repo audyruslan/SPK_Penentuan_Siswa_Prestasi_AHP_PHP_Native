@@ -12,7 +12,7 @@ if (!isset($_SESSION["username"])) {
     return false;
 }
 
-if ($_SESSION["role_id"] != "1") {
+if ($_SESSION["role_id"] != "2") {
     echo '<script>
                     alert("Maaf Anda Tidak Berhak Ke Halaman ini !");
                     window.location="' . $base_url . '/login.php";
@@ -71,7 +71,7 @@ while ($row = $kriterias->fetch(PDO::FETCH_ASSOC)) {
         <div class="container-fluid">
             <div class="card card-outline card-secondary">
                 <div class="container">
-                    <form method="post" action="analisa-kriteria-tabel.php">
+                    <form method="post" action="analisa-kriteria-tabel_user.php">
                         <div class="row text-center">
                             <div class="col-md-3">
                                 <div class="form-group">
